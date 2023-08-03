@@ -3,8 +3,8 @@ from streamlit_chat import message
 from utils import generate_response
 
 st.title("Dental Assistant")
-st.write("This is a demo of a virtual dental assistant. You can ask it questions about toothaches and it will respond with a diagnosis and recommended actions. The assistant is powered by Gedeon Gbedonou.")
-
+st.write("This is a demo of a virtual dental assistant. You can ask it questions about toothaches and it will respond with a diagnosis and recommended actions.")
+st.info("This assistant is powered by Gedeon Gbedonou")
 # container for chat history
 response_container = st.container()
 # container for text box
