@@ -1,6 +1,8 @@
 import openai
 import streamlit as st
 
+openai.api_key = st.secrets["openapi_key"]
+
 
 def generate_response(prompt):
     st.session_state['messages'].append({"role": "user", "content": prompt})
