@@ -3,6 +3,7 @@ from streamlit_chat import message
 from utils import generate_response
 
 st.title("Dental Assistant")
+st.write("This is a demo of a virtual dental assistant. You can ask it questions about toothaches and it will respond with a diagnosis and recommended actions. The assistant is powered by OpenAI's GPT-3.5 model.")
 
 # container for chat history
 response_container = st.container()
