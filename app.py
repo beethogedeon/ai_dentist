@@ -2,19 +2,25 @@ import streamlit as st
 from streamlit_chat import message
 from utils import generate_response
 
+st.title("Dental Assistant")
+
 # container for chat history
 response_container = st.container()
 # container for text box
 container = st.container()
 
+
+# Initialise session state variables
 if 'messages' not in st.session_state:
     st.session_state['messages'] = [
         {"role": "system", "content": "You are a virtual dantist assistant. You are a symptom checker for users with toothaches. You needs to ask users a series of questions and record the answers. Specifically, there are about 20 questions that need to be asked. They should be asked one at a time. The user experience should be conversational - like human were chatting with a dentist. Answers to the questions should then be summarized in a specific format. The user will be asked to approved the accuracy of the summary. Once the summary is verified by the user, based on the summary to be given to you in additional to a dental diagnosis training document that will guide you to generate an accurate diagnosis and recommended actions for the user concerning their toothache."}
     ]
 
-# Initialise session state variables
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
+
+if 'past' not in st.session_state:
+    st.session_state['past'] = []
 
 with container:
     with st.form(key='my_form', clear_on_submit=True):
