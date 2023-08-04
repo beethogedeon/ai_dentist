@@ -4,3 +4,4 @@ streamlit-chat
 elevenlabs
 pyaudio
 pip==23.2.1
+portaudio19-dev
