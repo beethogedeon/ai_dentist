@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_chat import message
-from utils import generate_response
+from utils import generate_response, speak
 
 st.title("Dental Assistant")
 st.write("This is a demo of a virtual dental assistant. You can ask it questions about toothaches and it will respond with a diagnosis and recommended actions.")
@@ -38,3 +38,4 @@ if st.session_state['generated']:
         for i in range(len(st.session_state['generated'])):
             message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
             message(st.session_state["generated"][i], key=str(i))
+            speak(st.session_state["generated"][len(st.session_state['generated']) - 1])
