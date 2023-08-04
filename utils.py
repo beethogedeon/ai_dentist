@@ -25,3 +25,4 @@ def speak(text: str):
         model='eleven_multilingual_v1'
     )
     play(audio)
+
