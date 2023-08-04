@@ -1,5 +1,6 @@
 import openai
 import streamlit as st
+from elevenlabs import generate, play
 
 openai.api_key = st.secrets["openapi_key"]
 
@@ -15,3 +16,12 @@ def generate_response(prompt):
     st.session_state['messages'].append({"role": "assistant", "content": response})
 
     return response
+
+
+def speak(text: str):
+    audio = generate(
+        text=text,
+        voice="Arnold",
+        model='eleven_multilingual_v1'
+    )
+    play(audio)
