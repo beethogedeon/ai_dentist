@@ -1,6 +1,6 @@
 openai
 streamlit
 streamlit-chat
-elevenlabs
 pyaudio
 pip==23.2.1
+elevenlabslib
