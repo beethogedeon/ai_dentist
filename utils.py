@@ -2,7 +2,7 @@ import openai
 import streamlit as st
 from elevenlabs import generate, play
 
-openai.api_key = st.secrets["openapi_key"]
+openai.api_key = st.secrets.api_credentials.openapi_key
 
 
 def generate_response(prompt):
