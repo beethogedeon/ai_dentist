@@ -10,6 +10,8 @@ response_container = st.container()
 # container for text box
 container = st.container()
 
+if 'already_speak' not in st.session_state:
+    st.session_state["already_speak"] = []
 
 # Initialise session state variables
 if 'messages' not in st.session_state:
@@ -38,4 +40,7 @@ if st.session_state['generated']:
         for i in range(len(st.session_state['generated'])):
             message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
             message(st.session_state["generated"][i], key=str(i))
-            speak(st.session_state["generated"][len(st.session_state['generated']) - 1])
+            if not (len(st.session_state['generated']) - 1 in st.session_state['already_speak']):
+                speak(st.session_state["generated"][len(st.session_state['generated']) - 1])
+                st.session_state['already_speak'].append(len(st.session_state['generated']) - 1)
+
