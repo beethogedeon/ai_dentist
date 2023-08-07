@@ -4,3 +4,4 @@ streamlit-chat
 pyaudio
 pip==23.2.1
 elevenlabslib
+js2py

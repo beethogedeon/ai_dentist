@@ -1,9 +1,10 @@
 import openai
 import streamlit as st
-import elevenlabslib as el
+
+from elevenlabs import generate, play
 
 openai.api_key = st.secrets.api_credentials.openapi_key
-user = el.ElevenLabsUser(st.secrets.api_credentials.elevenlabsapi_key)
+st.secrets.api_credentials.elevenlabsapi_key
 
 
 def generate_response(prompt):
@@ -19,9 +20,13 @@ def generate_response(prompt):
     return response
 
 
-def speak(text: str, voice_name: str):
+def speak(text: str):
+    audio = generate(
+        text=text,
+        api_key=st.secrets.api_credentials.elevenlabsapi_key,
+        voice="Arnold",
+        model='eleven_multilingual_v1',
+        stream=True
+    )
 
-    voice = user.get_voices_by_name(voice_name)[0]  # This is a list because multiple voices can have the same name
-    # voice.play_preview_v2(playbackOptions=PlaybackOptions(runInBackground=True))
-    voice.generate_play_audio_v2(text, playbackOptions=el.PlaybackOptions(runInBackground=True), generationOptions=el.GenerationOptions(model_id="eleven_multilingual_v1"))
-
+    play(audio)
