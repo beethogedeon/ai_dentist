@@ -42,6 +42,6 @@ if st.session_state['generated']:
             message(st.session_state["generated"][i], key=str(i))
 
         if not (len(st.session_state['generated']) - 1 in st.session_state['already_speak']):
-            speak(st.session_state["generated"][len(st.session_state['generated']) - 1])
+            speak(st.session_state["generated"][len(st.session_state['generated']) - 1], voice_name="Guy")
             st.session_state['already_speak'].append(len(st.session_state['generated']) - 1)
 

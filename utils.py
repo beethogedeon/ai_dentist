@@ -22,6 +22,6 @@ def generate_response(prompt):
 def speak(text: str, voice_name: str):
 
     voice = user.get_voices_by_name(voice_name)[0]  # This is a list because multiple voices can have the same name
-    voice.play_preview(playInBackground=True)
+    # voice.play_preview_v2(playbackOptions=PlaybackOptions(runInBackground=True))
     voice.generate_play_audio_v2(text, playbackOptions=PlaybackOptions(runInBackground=True), generationOptions=GenerationOptions(model_id="eleven_multilingual_v1"))
 
