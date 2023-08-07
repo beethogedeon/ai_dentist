@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_chat import message
-from utils import generate_response, speak
+from util import generate_response, speak
 
 st.title("Dental Assistant")
 st.write("This is a demo of a virtual dental assistant. You can ask it questions about toothaches and it will respond with a diagnosis and recommended actions.")
