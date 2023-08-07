@@ -1,3 +1,5 @@
 portaudio19-dev
 python3-all-dev
 ffmpeg
+libportaudio2
+python3-pyaudio
