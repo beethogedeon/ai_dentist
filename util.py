@@ -4,7 +4,6 @@ import streamlit as st
 from elevenlabs import generate, play
 
 openai.api_key = st.secrets.api_credentials.openapi_key
-st.secrets.api_credentials.elevenlabsapi_key
 
 
 def generate_response(prompt):
@@ -25,8 +24,7 @@ def speak(text: str):
         text=text,
         api_key=st.secrets.api_credentials.elevenlabsapi_key,
         voice="Arnold",
-        model='eleven_multilingual_v1',
-        stream=True
+        model='eleven_multilingual_v1'
     )
 
     play(audio)
