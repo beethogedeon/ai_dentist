@@ -5,3 +5,4 @@ pyaudio
 pip==23.2.1
 elevenlabs
 js2py
+pydub
