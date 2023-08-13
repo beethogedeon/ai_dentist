@@ -44,11 +44,3 @@ def speak(text: str):
         for chunk in response.iter_content(chunk_size=chunk_size):
             if chunk:
                 f.write(chunk)
-
-    html(f'''
-        <script>
-            var audio = new Audio();
-            audio.src = "output.mp3";
-            audio.autoplay = true;
-        </script>
-    ''')
