@@ -1,8 +1,9 @@
-openai
-streamlit
+openai~=0.27.8
+streamlit~=1.25.0
 streamlit-chat
 pyaudio
 pip==23.2.1
-elevenlabs
+elevenlabs~=0.2.21
 js2py
 pydub
+requests~=2.31.0
